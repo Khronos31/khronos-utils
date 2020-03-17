@@ -7,10 +7,16 @@ package main
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-void clipText(char *text);
+void clipText(char *data);
 
-void clipText(char *text) {
-	[[UIPasteboard generalPasteboard] setValue:[NSString stringWithCString:text encoding:NSUTF8StringEncoding] forPasteboardType:@"public.text"];
+void clipText(char *data) {
+	NSString *text = [NSString stringWithCString:data encoding:NSUTF8StringEncoding];
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	if ([UIDevice currentDevice].systemVersion.doubleValue >= 10) {
+		pasteboard.string = text;
+	} else {
+		[pasteboard setValue:text forPasteboardType:@"public.text"];
+	}
 }
 */
 import "C"
