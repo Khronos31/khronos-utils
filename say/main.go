@@ -14,6 +14,9 @@ void speechText(char *text) {
 	NSString *speakingText = [NSString stringWithCString:text encoding:NSUTF8StringEncoding];
 	AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:speakingText];
 	[speechSynthesizer speakUtterance:utterance];
+	do {
+		sleep(1);
+	} while(speechSynthesizer.speaking);
 }
 */
 import "C"
