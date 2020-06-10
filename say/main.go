@@ -9,11 +9,15 @@ package main
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
+void initSpeechSynthesizer();
 void speechText(char *text);
 
-void speechText(char *text) {
+void initSpeechSynthesizer() {
 	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 	[[AVAudioSession sharedInstance] setActive:YES error:nil];
+}
+
+void speechText(char *text) {
 	AVSpeechSynthesizer *speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
 	NSString *speakingText = [NSString stringWithCString:text encoding:NSUTF8StringEncoding];
 	AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:speakingText];
@@ -43,5 +47,6 @@ func main() {
 		data, _ := ioutil.ReadAll(os.Stdin)
 		text = string(data)
 	}
+	C.initSpeechSynthesizer()
 	C.speechText(C.CString(text))
 }
