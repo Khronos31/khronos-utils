@@ -6,7 +6,7 @@ Section: Utilities
 Architecture: iphoneos-arm
 Pre-Depends: dpkg
 Maintainer: Khronos
-Homepage: https://golang.org
+Homepage: https://github.com/Khronos31/khronos-utils
 Tag: purpose::console
 Description: Compiled for %%ARCHS%%.
 	Useful command line utilities.
