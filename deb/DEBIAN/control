@@ -2,7 +2,7 @@ Package: com.khronos.utilities
 Priority: optional
 Name: Khronos Utilities
 Version: %%VERSION%%
-Section: Scripting
+Section: Utilities
 Architecture: iphoneos-arm
 Pre-Depends: dpkg
 Maintainer: Khronos
