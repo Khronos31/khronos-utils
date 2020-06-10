@@ -1,0 +1,12 @@
+Package: com.khronos.utilities
+Priority: optional
+Name: Khronos Utilities
+Version: %%VERSION%%
+Section: Scripting
+Architecture: iphoneos-arm
+Pre-Depends: dpkg
+Maintainer: Khronos
+Homepage: https://golang.org
+Tag: purpose::console
+Description: Compiled for %%ARCHS%%.
+	Useful command line utilities.
