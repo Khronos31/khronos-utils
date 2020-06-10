@@ -1,8 +1,10 @@
 package main
 
 /*
-#cgo LDFLAGS: -framework Foundation -framework AVFoundation -isysroot /usr/share/SDKs/iPhoneOS.sdk
-#cgo CFLAGS: -ObjC -isysroot /usr/share/SDKs/iPhoneOS.sdk
+#cgo arm LDFLAGS: -framework Foundation -framework AVFoundation -isysroot /usr/share/SDKs/iPhoneOS.sdk -miphoneos-version-min=7.0 -arch armv7
+#cgo arm CFLAGS: -ObjC -isysroot /usr/share/SDKs/iPhoneOS.sdk -miphoneos-version-min=7.0 -arch armv7
+#cgo arm64 LDFLAGS: -framework Foundation -framework AVFoundation -isysroot /usr/share/SDKs/iPhoneOS.sdk -miphoneos-version-min=7.0 -arch arm64
+#cgo arm64 CFLAGS: -ObjC -isysroot /usr/share/SDKs/iPhoneOS.sdk -miphoneos-version-min=7.0 -arch arm64
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
