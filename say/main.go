@@ -12,6 +12,8 @@ package main
 void speechText(char *text);
 
 void speechText(char *text) {
+	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+	[[AVAudioSession sharedInstance] setActive:YES error:nil];
 	AVSpeechSynthesizer *speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
 	NSString *speakingText = [NSString stringWithCString:text encoding:NSUTF8StringEncoding];
 	AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:speakingText];
